@@ -131,33 +131,4 @@ class NN implements Serializable{
       biases[i].mutateMat(mr);
     }
   }
-
-  void saveData(File file) {
-    try {
-      FileOutputStream fos = new FileOutputStream(file);
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
-      oos.writeObject(this);
-      fos.close();
-    }
-    catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  NN loadData(File file) {
-    NN savedBrain = null;
-    try {
-      FileInputStream fis = new FileInputStream(file);
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      savedBrain = (NN) ois.readObject();
-      fis.close();
-    }
-    catch (IOException e) {
-      e.printStackTrace();
-    }
-    catch (ClassNotFoundException e) {
-      e.printStackTrace();
-    }
-    return savedBrain;
-  }
 }

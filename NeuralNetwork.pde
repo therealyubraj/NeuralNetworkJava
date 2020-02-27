@@ -1,8 +1,4 @@
-import java.util.*;
-import java.io.*;
-import java.io.Serializable.*;
-
-class NN implements Serializable{
+class NN {
   int I, H, O, NoH, total;
   float lr;
 
